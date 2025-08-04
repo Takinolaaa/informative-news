@@ -1,5 +1,6 @@
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home from "./Pages/Home";
 import News from "./Pages/News";
 import Finder from "./Pages/Finder";
@@ -10,13 +11,14 @@ const routes = [
   { path: "/news-search", element: <Finder /> },
 ];
 
-// Pass basename option here:
-const router = createBrowserRouter(routes, {
-  basename: "/informative-news",
-});
+const router = createBrowserRouter(routes);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <HashRouter>
+      <RouterProvider router={router} />
+    </HashRouter>
+  );
 }
 
 export default App;
