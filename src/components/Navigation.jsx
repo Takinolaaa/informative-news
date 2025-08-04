@@ -1,13 +1,14 @@
+import { Link } from "react-router-dom";
+
 export default function Navbar() {
   return (
     <nav className="flex  bg-black font-mono text-white p-4 justify-between">
       {" "}
-      <a className="text-white text-bold font-mono " href="/">
-        Informative News
-      </a>{" "}
+      <Link to="/">Informative news</Link>
       <div className="flex gap-2">
-        <a href="/news">Trending News</a>
-        <a href="/news-search">Find Articles</a>
+        <Link to="/">Home</Link>
+        <Link to="/news">News</Link>
+        <Link to="/news-search">Search</Link>
       </div>
     </nav>
   );

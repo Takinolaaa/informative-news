@@ -30,13 +30,16 @@ export default function Article({
 
     async function getResponse() {
       try {
-        const response = await fetch("http://localhost:3000/gpt-response", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt: desc }),
-        });
+        const response = await fetch(
+          "https://informative-news.onrender.com/gpt-response",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: desc }),
+          }
+        );
 
         const data = await response.json();
 
