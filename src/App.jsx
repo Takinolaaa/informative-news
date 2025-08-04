@@ -1,19 +1,16 @@
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Pages/Home";
 import News from "./Pages/News";
 import Finder from "./Pages/Finder";
+const routes = createBrowserRouter([
+  { path: "/informative-news/", element: <Home /> },
+  { path: "/informative-news/news", element: <News /> },
+  { path: "/informative-news/news-search", element: <Finder /> },
+]);
 
 function App() {
-  return (
-    <Router basename="/informative-news">
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/news-search" element={<Finder />} />
-      </Routes>
-    </Router>
-  );
+  return <RouterProvider router={routes} />;
 }
 
 export default App;
