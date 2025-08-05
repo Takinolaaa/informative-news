@@ -6,7 +6,7 @@ export default function Navbar() {
       {" "}
       <Link to="/">Informative news</Link>
       <div className="flex gap-2">
-        <Link to="/news">News</Link>
+        <Link to="/news">Trending News</Link>
         <Link to="/news-search">Search</Link>
       </div>
     </nav>
