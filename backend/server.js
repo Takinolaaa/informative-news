@@ -41,6 +41,13 @@ app.get("/pickNews", async (req, res) => {
   }
 });
 
+app.get("/env-check", (req, res) => {
+  res.json({
+    openai: process.env.OPENAI_API_KEY ? "✔️ present" : "❌ missing",
+    news: process.env.NEWS_API_KEY ? "✔️ present" : "❌ missing",
+  });
+});
+
 app.post("/gpt-response", async (req, res) => {
   const desc = req.body.prompt;
   try {
