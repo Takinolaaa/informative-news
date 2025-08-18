@@ -2,14 +2,17 @@ import { useState, useEffect } from "react";
 
 import { getTopheadlines } from "../apiMethods";
 import Article from "./Article";
+import Throbber from "./Throbber";
 
 export default function Articles() {
   const [headlines, setHeadlines] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function readHeadlines() {
       try {
         const data = await getTopheadlines();
+        setLoading(false);
         setHeadlines(data.articles);
       } catch (error) {
         console.log("Error, could not retreive Headlines", error);
@@ -21,6 +24,7 @@ export default function Articles() {
   console.log(headlines);
   return (
     <div className="flex flex-col  sm:grid grid-cols-3 w-fit p-2 gap-6 ">
+      {loading && <Throbber />}
       {headlines?.map((headline) => (
         <Article
           key={headline.url}

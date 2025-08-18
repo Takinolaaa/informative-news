@@ -10,6 +10,7 @@ export default function News() {
       <div className="flex justify-center">
         <Articles />
       </div>
+
       <Footer />
     </>
   );

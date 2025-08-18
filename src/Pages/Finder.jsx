@@ -3,15 +3,18 @@ import { useState, useEffect } from "react";
 import { fetchNews } from "../apiMethods";
 import Article from "../components/Article";
 import Footer from "../components/Footer";
+import Throbber from "../components/Throbber";
 
 export default function Finder() {
   const [selected, setSelected] = useState("random");
   const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getNews = async () => {
       try {
         const data = await fetchNews(selected);
+        setLoading(false);
         setArticles(data.articles);
       } catch (error) {
         console.log("error fetching articles", error);
@@ -26,6 +29,7 @@ export default function Finder() {
 
       <div className=" flex flex-col  p-4">
         <h1 className="text-center">Explore articles</h1>
+        {loading && <Throbber />}
         <div className="p-4 h-fit  w-fit gap-1 ml-30 sm:ml-1 md:ml-1  2xl:ml-36">
           <select
             onChange={(e) => setSelected(e.target.value)}
