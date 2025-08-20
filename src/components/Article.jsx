@@ -1,5 +1,6 @@
 import { useState } from "react";
-// import { getInsight } from "../apiMethods";
+import Throbber from "./Throbber";
+import DOMPurify from "dompurify";
 
 export default function Article({
   author,
@@ -65,7 +66,7 @@ export default function Article({
           <span>{author}</span>
           <span className="">{published}</span>
         </section>
-        <figure className="">
+        <figure className="mt-3">
           <a
             href={url}
             className="w-full h-96 hover:grayscale-75 bg-cover"
@@ -85,7 +86,7 @@ export default function Article({
           </a>
         </figure>
 
-        <article className="p-2  h-45 ">{desc}</article>
+        <article className="p-2  h-40 ">{desc}</article>
 
         <div className="">
           <button
@@ -116,16 +117,13 @@ export default function Article({
 
       {load && (
         <div className="fixed gap-4 inset-0 bg-white/20 backdrop-blur-sm backdrop-sepia-0S  z-50 flex items-center justify-center">
-          <div className="bg-blue-700  size-5 w-6 h-6 animate-spin"> </div>
-          <div className="">
-            <h1 className="text-bold text-blue-700">Loading...</h1>
-          </div>
+          <Throbber />
         </div>
       )}
 
       {modal && (
         <div className="fixed inset-0 bg-white/20 backdrop-blur-sm   z-50 flex items-center justify-center">
-          <div className=" p-4 text-black overflow-auto text-center bg-white rounded-lg w-108 h-fit ">
+          <div className="response chat-response p-4 text-black overflow-auto text-center bg-white rounded-lg w-108 h-fit ">
             <br></br>
             <p className="">{res}</p>
             <div>

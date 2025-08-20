@@ -41,13 +41,6 @@ app.get("/pickNews", async (req, res) => {
   }
 });
 
-app.get("/env-check", (req, res) => {
-  res.json({
-    openai: process.env.OPENAI_API_KEY ? "✔️ present" : "❌ missing",
-    news: process.env.NEWS_API_KEY ? "✔️ present" : "❌ missing",
-  });
-});
-
 app.post("/gpt-response", async (req, res) => {
   const desc = req.body.prompt;
   try {
@@ -57,10 +50,10 @@ app.post("/gpt-response", async (req, res) => {
         {
           role: "user",
           content:
-            `Given the article description: "${desc}", the following response needs to be separated by section:\n\n` +
-            `(dark bolded)Insight: [your insight here]\n` +
-            `(dark bolded)Sentiment: [Positive/Negative/Neutral] — [brief explanation]\n` +
-            `(dark bolded)Bias: [Bias type] — [brief explanation]`,
+            `Given the article description: "${desc}", the following response needs to be separated by bolded section headers:\n\n` +
+            `Insight: [your insight here]\n` +
+            `Sentiment: [Positive/Negative/Neutral] — [brief explanation]\n` +
+            `Bias: [Bias type] — [brief explanation]`,
         },
       ],
     });

@@ -29,7 +29,7 @@ export default function Finder() {
 
       <div className=" flex flex-col  p-4">
         <h1 className="text-center">Explore articles</h1>
-        {loading && <Throbber />}
+
         <div className="p-4 h-fit  w-fit gap-1 ml-30 sm:ml-1 md:ml-1  2xl:ml-36">
           <select
             onChange={(e) => setSelected(e.target.value)}
@@ -48,6 +48,7 @@ export default function Finder() {
           </select>
         </div>
       </div>
+      {loading && <Throbber />}
       <div className="flex  justify-center">
         <div className="flex flex-col sm:grid grid-cols-3 w-fit p-2 gap-2 justify-center">
           {articles?.map((headline) => (

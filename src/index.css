@@ -17,6 +17,12 @@ nav a:hover {
   color: rgb(57, 57, 238);
   text-decoration: underline;
 }
+
+.response {
+  white-space: pre-wrap; /* preserves newlines & spaces */
+  word-wrap: break-word; /* prevents long words from breaking layout */
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
