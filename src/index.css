@@ -6,13 +6,14 @@
 
   color-scheme: light dark;
   color: white;
-  background-color: #242424;
+  background: linear-gradient(to right, #3b4a58, #2c3340, #1e232b, #121417);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 nav a:hover {
   color: rgb(57, 57, 238);
   text-decoration: underline;
