@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navigation";
+import trendImage from "../assets/news-tracker-centerpiece-phone.svg"; // Fixed import
 
 export default function Home() {
   return (
@@ -9,19 +10,22 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-screen flex items-center justify-center text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-600 from-10% via-20% to-black bg-center" />
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />{" "}
-        {/* subtle overlay */}
-        <div className="flex-col justify-center relative z-10 text-center  px-6">
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />
+
+        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight drop-shadow-lg">
             Keep the world informed
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
             Empowering the next generation to recognize truth in a noisy world.
           </p>
+
+          {/* Responsive SVG */}
           <img
-            className="ml-30 h-84 w-84"
-            src="src/assets/news-tracker-centerpiece-phone.svg"
-          ></img>
+            className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto mt-8"
+            src={trendImage}
+            alt="Trend tracker illustration"
+          />
         </div>
       </section>
 
@@ -33,12 +37,12 @@ export default function Home() {
           </h2>
           <p className="text-lg sm:text-xl leading-relaxed text-gray-200">
             In a world where propaganda is prevalent and information isn't
-            always reliable, it’s imperative that young people are equipped with
+            always reliable, it's imperative that young people are equipped with
             the tools and knowledge needed to spot misinformation and
             manipulative media practices.
             <br />
             <br />
-            News is a vital resource for understanding what’s happening locally
+            News is a vital resource for understanding what's happening locally
             and globally, but many young people are losing faith due to poor
             journalism and sensationalism.
             <br />
