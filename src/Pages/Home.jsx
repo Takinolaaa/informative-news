@@ -11,13 +11,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-600 from-10% via-20% to-black bg-center" />
         <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px]" />{" "}
         {/* subtle overlay */}
-        <div className="relative z-10 text-center px-6">
+        <div className="flex-col justify-center relative z-10 text-center  px-6">
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight drop-shadow-lg">
             Keep the world informed
           </h1>
           <p className="mt-4 text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
             Empowering the next generation to recognize truth in a noisy world.
           </p>
+          <img
+            className="ml-30 h-84 w-84"
+            src="src/assets/news-tracker-centerpiece-phone.svg"
+          ></img>
         </div>
       </section>
 

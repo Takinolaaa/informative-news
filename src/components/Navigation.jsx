@@ -2,10 +2,14 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-black text-white font-mono shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+    <nav className=" bg-black text-white font-mono shadow-md">
+      <div className=" mr-7 mx-auto flex items-center justify-between px-2 py-4">
         {/* Brand / Logo */}
-        <div className="text-lg sm:text-xl font-semibold tracking-wide">
+        <div className="flex items-center gap-3 text-lg sm:text-xl font-semibold tracking-wide">
+          <img
+            className="h-12 w-12 object-contain"
+            src="src/assets/InLogo.png"
+          />
           <Link
             to="/"
             className="hover:text-gray-300 transition-colors duration-200"
