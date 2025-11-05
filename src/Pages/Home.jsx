@@ -1,6 +1,6 @@
 import Footer from "../components/Footer";
 import Navbar from "../components/Navigation";
-import trendImage from "../assets/news-tracker-centerpiece-phone.svg"; // Fixed import
+import trendImage from "../assets/news-tracker-centerpiece-phone.svg";
 
 export default function Home() {
   return (
